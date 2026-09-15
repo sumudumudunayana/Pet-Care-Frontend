@@ -1,0 +1,1903 @@
+/* =========================================================
+   PAWCARE MODERN LOGIN
+========================================================= */
+
+.pawcare-login-page {
+  min-height: 100vh;
+  width: 100%;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 8% 15%,
+      rgba(34, 197, 94, 0.28),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 92% 85%,
+      rgba(20, 184, 166, 0.25),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(74, 222, 128, 0.08),
+      transparent 45%
+    ),
+    #f0fdf4;
+}
+
+
+/* =========================================================
+   BACKGROUND GRADIENT ATMOSPHERE
+========================================================= */
+
+.login-bg-gradient {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 20%,
+      rgba(34, 197, 94, 0.04) 50%,
+      transparent 80%
+    );
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   LARGE BACKGROUND BLOBS
+========================================================= */
+
+.login-decoration {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(1px);
+
+  z-index: 0;
+}
+
+
+/* Top right */
+
+.login-decoration-one {
+  width: 520px;
+  height: 520px;
+
+  top: -270px;
+  right: -180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(34, 197, 94, 0.25) 0%,
+      rgba(34, 197, 94, 0.12) 45%,
+      transparent 72%
+    );
+
+  animation: floatBlobOne 10s ease-in-out infinite;
+}
+
+
+/* Bottom left */
+
+.login-decoration-two {
+  width: 420px;
+  height: 420px;
+
+  bottom: -230px;
+  left: -170px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(20, 184, 166, 0.23) 0%,
+      rgba(20, 184, 166, 0.10) 45%,
+      transparent 72%
+    );
+
+  animation: floatBlobTwo 12s ease-in-out infinite;
+}
+
+
+/* Center glow */
+
+.login-decoration-three {
+  width: 260px;
+  height: 260px;
+
+  top: 38%;
+  right: 28%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(74, 222, 128, 0.12),
+      transparent 70%
+    );
+
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   BACKGROUND RINGS
+========================================================= */
+
+.login-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  border: 2px solid rgba(22, 163, 74, 0.10);
+
+  z-index: 0;
+}
+
+
+/* Ring 1 */
+
+.login-ring-one {
+  width: 360px;
+  height: 360px;
+
+  top: -170px;
+  left: 16%;
+
+  border-width: 3px;
+
+  box-shadow:
+    0 0 0 18px rgba(34, 197, 94, 0.025),
+    0 0 0 38px rgba(34, 197, 94, 0.018);
+
+  animation: rotateSlow 30s linear infinite;
+}
+
+
+/* Ring 2 */
+
+.login-ring-two {
+  width: 220px;
+  height: 220px;
+
+  bottom: -100px;
+  right: 12%;
+
+  border-color: rgba(20, 184, 166, 0.13);
+
+  box-shadow:
+    0 0 0 15px rgba(20, 184, 166, 0.025),
+    0 0 0 32px rgba(20, 184, 166, 0.018);
+
+  animation: rotateReverse 25s linear infinite;
+}
+
+
+/* Ring 3 */
+
+.login-ring-three {
+  width: 100px;
+  height: 100px;
+
+  top: 18%;
+  left: 7%;
+
+  border-width: 14px;
+
+  border-color: rgba(34, 197, 94, 0.07);
+
+  animation: pulseRing 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   FLOATING PAWS
+========================================================= */
+
+.login-paw-decoration {
+  position: absolute;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(22, 163, 74, 0.13);
+
+  pointer-events: none;
+
+  z-index: 1;
+
+  filter:
+    drop-shadow(
+      0 8px 20px rgba(22, 163, 74, 0.08)
+    );
+}
+
+
+/* Paw 1 */
+
+.paw-one {
+  top: 7%;
+  right: 10%;
+
+  font-size: 78px;
+
+  transform: rotate(25deg);
+
+  animation: floatingPawOne 7s ease-in-out infinite;
+}
+
+
+/* Paw 2 */
+
+.paw-two {
+  bottom: 7%;
+  left: 7%;
+
+  font-size: 95px;
+
+  color: rgba(20, 184, 166, 0.12);
+
+  transform: rotate(-25deg);
+
+  animation: floatingPawTwo 9s ease-in-out infinite;
+}
+
+
+/* Paw 3 */
+
+.paw-three {
+  top: 55%;
+  left: 2%;
+
+  font-size: 42px;
+
+  color: rgba(34, 197, 94, 0.10);
+
+  transform: rotate(-18deg);
+
+  animation: floatingPawThree 8s ease-in-out infinite;
+}
+
+
+/* Paw 4 */
+
+.paw-four {
+  bottom: 18%;
+  right: 4%;
+
+  font-size: 52px;
+
+  color: rgba(20, 184, 166, 0.10);
+
+  transform: rotate(30deg);
+
+  animation: floatingPawFour 10s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   DECORATIVE DOTS
+========================================================= */
+
+.login-dot {
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: rgba(22, 163, 74, 0.22);
+
+  box-shadow:
+    0 0 0 6px rgba(34, 197, 94, 0.04);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+.login-dot-one {
+  top: 20%;
+  right: 24%;
+
+  animation: dotFloat 5s ease-in-out infinite;
+}
+
+
+.login-dot-two {
+  bottom: 24%;
+  left: 25%;
+
+  width: 6px;
+  height: 6px;
+
+  animation: dotFloat 6s ease-in-out infinite 1s;
+}
+
+
+.login-dot-three {
+  top: 70%;
+  right: 7%;
+
+  width: 5px;
+  height: 5px;
+
+  background: rgba(20, 184, 166, 0.25);
+
+  animation: dotFloat 7s ease-in-out infinite 2s;
+}
+
+
+.login-dot-four {
+  top: 10%;
+  left: 28%;
+
+  width: 5px;
+  height: 5px;
+
+  animation: dotFloat 6s ease-in-out infinite 1.5s;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.pawcare-login-container {
+  width: min(1120px, 100%);
+
+  min-height: 680px;
+
+  display: grid;
+
+  grid-template-columns: 48% 52%;
+
+  position: relative;
+
+  z-index: 5;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 35px 90px rgba(15, 23, 42, 0.13),
+    0 15px 40px rgba(22, 163, 74, 0.07);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================================
+   BRAND SECTION
+========================================================= */
+
+.pawcare-login-brand {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 48px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255, 255, 255, 0.20),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 15% 90%,
+      rgba(45, 212, 191, 0.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #064e3b 0%,
+      #047857 38%,
+      #16a34a 68%,
+      #0f766e 100%
+    );
+}
+
+
+/* =========================================================
+   BRAND GLOW
+========================================================= */
+
+.brand-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(5px);
+}
+
+
+/* Top glow */
+
+.brand-glow-one {
+  width: 300px;
+  height: 300px;
+
+  top: -170px;
+  right: -120px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.18),
+      transparent 70%
+    );
+
+  animation: brandGlowOne 8s ease-in-out infinite;
+}
+
+
+/* Bottom glow */
+
+.brand-glow-two {
+  width: 260px;
+  height: 260px;
+
+  bottom: -150px;
+  left: -100px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(45, 212, 191, 0.25),
+      transparent 70%
+    );
+
+  animation: brandGlowTwo 10s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   BRAND CIRCLES
+========================================================= */
+
+.brand-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  pointer-events: none;
+}
+
+
+.brand-circle-one {
+  width: 280px;
+  height: 280px;
+
+  right: -180px;
+  top: 35%;
+
+  box-shadow:
+    0 0 0 20px rgba(255, 255, 255, 0.025),
+    0 0 0 45px rgba(255, 255, 255, 0.018);
+
+  animation: rotateSlow 35s linear infinite;
+}
+
+
+.brand-circle-two {
+  width: 150px;
+  height: 150px;
+
+  left: -80px;
+  bottom: 15%;
+
+  border-color: rgba(255, 255, 255, 0.07);
+
+  animation: rotateReverse 25s linear infinite;
+}
+
+
+/* =========================================================
+   BRAND PAWS
+========================================================= */
+
+.brand-paw {
+  position: absolute;
+
+  color: rgba(255, 255, 255, 0.055);
+
+  pointer-events: none;
+}
+
+
+.brand-paw svg {
+  font-size: 130px;
+}
+
+
+.brand-paw-one {
+  right: -25px;
+  top: 30%;
+
+  transform: rotate(25deg);
+}
+
+
+.brand-paw-two {
+  left: -25px;
+  bottom: 5%;
+
+  transform: rotate(-20deg);
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   BRAND TOP
+========================================================= */
+
+.brand-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  position: relative;
+
+  z-index: 3;
+}
+
+
+.brand-logo {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  color: #166534;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.16);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.brand-logo:hover {
+  transform: translateY(-2px) rotate(-3deg);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.20);
+}
+
+
+.brand-logo svg {
+  font-size: 22px;
+}
+
+
+.brand-top > span {
+  font-size: 25px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   BRAND CONTENT
+========================================================= */
+
+.brand-content {
+  max-width: 470px;
+
+  margin: auto 0;
+
+  position: relative;
+
+  z-index: 3;
+}
+
+
+.brand-badge {
+  width: fit-content;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 22px;
+
+  padding: 8px 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.20);
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.13);
+
+  color: #ecfdf5;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+.brand-badge svg {
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   BRAND HEADING
+========================================================= */
+
+.brand-content h1 {
+  margin: 0;
+
+  font-size: clamp(38px, 4vw, 54px);
+
+  line-height: 1.08;
+
+  letter-spacing: -2px;
+
+  font-weight: 800;
+}
+
+
+.brand-content h1 span {
+  color: #bbf7d0;
+
+  position: relative;
+}
+
+
+/* Small underline */
+
+.brand-content h1 span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: -3px;
+
+  height: 3px;
+
+  border-radius: 5px;
+
+  background: rgba(187, 247, 208, 0.65);
+}
+
+
+/* =========================================================
+   BRAND DESCRIPTION
+========================================================= */
+
+.brand-content > p {
+  max-width: 430px;
+
+  margin: 24px 0 0;
+
+  color: #d1fae5;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.brand-features {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+
+  margin-top: 35px;
+}
+
+
+.brand-feature {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+.feature-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.13);
+
+  color: #bbf7d0;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.feature-icon svg {
+  font-size: 14px;
+}
+
+
+.brand-feature div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.brand-feature strong {
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+.brand-feature span {
+  color: #bbf7d0;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   BRAND FOOTER
+========================================================= */
+
+.brand-bottom {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  position: relative;
+
+  z-index: 3;
+
+  color: #bbf7d0;
+
+  font-size: 12px;
+}
+
+
+.brand-bottom span {
+  font-size: 18px;
+}
+
+
+.brand-bottom p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   LOGIN FORM SECTION
+========================================================= */
+
+.pawcare-login-form-section {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(34, 197, 94, 0.045),
+      transparent 35%
+    ),
+    #ffffff;
+}
+
+
+/* =========================================================
+   FORM WRAPPER
+========================================================= */
+
+.login-form-wrapper {
+  width: 100%;
+
+  max-width: 430px;
+}
+
+
+/* =========================================================
+   MOBILE BRAND
+========================================================= */
+
+.mobile-login-brand {
+  display: none;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 35px;
+}
+
+
+.mobile-login-brand .brand-logo {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  background: #dcfce7;
+
+  color: #15803d;
+}
+
+
+.mobile-login-brand > span {
+  color: #166534;
+
+  font-size: 23px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.login-form-header {
+  margin-bottom: 30px;
+}
+
+
+.welcome-label {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #16a34a;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+.login-form-header h2 {
+  margin: 0 0 10px;
+
+  color: #172033;
+
+  font-size: 34px;
+
+  line-height: 1.15;
+
+  letter-spacing: -1px;
+}
+
+
+.login-form-header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.pawcare-login-error {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+
+  padding: 12px 14px;
+
+  border: 1px solid #fecaca;
+
+  border-radius: 10px;
+
+  background: #fef2f2;
+
+  color: #b91c1c;
+
+  font-size: 13px;
+}
+
+
+.pawcare-login-error span {
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #dc2626;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.pawcare-login-error p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.pawcare-login-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.pawcare-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.pawcare-field label {
+  color: #334155;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   PASSWORD LABEL
+========================================================= */
+
+.password-label-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+.forgot-password {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #16a34a;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.forgot-password:hover {
+  color: #15803d;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.pawcare-input-wrapper {
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 13px;
+
+  background: #f8fafc;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.pawcare-input-wrapper:hover {
+  border-color: #cbd5e1;
+}
+
+
+.pawcare-input-wrapper:focus-within {
+  border-color: #22c55e;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 94, 0.10),
+    0 8px 20px rgba(34, 197, 94, 0.05);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   INPUT ICON
+========================================================= */
+
+.pawcare-input-icon {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #dcfce7;
+
+  color: #16a34a;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.pawcare-input-wrapper:focus-within
+.pawcare-input-icon {
+  background: #bbf7d0;
+
+  transform: scale(1.04);
+}
+
+
+.pawcare-input-icon svg {
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   INPUT TEXT
+========================================================= */
+
+.pawcare-input-wrapper input {
+  width: 100%;
+
+  min-width: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #1e293b;
+
+  font-family: inherit;
+
+  font-size: 14px;
+}
+
+
+.pawcare-input-wrapper input::placeholder {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   PASSWORD TOGGLE
+========================================================= */
+
+.pawcare-password-toggle {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #94a3b8;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.pawcare-password-toggle:hover {
+  background: #dcfce7;
+
+  color: #16a34a;
+
+  transform: scale(1.05);
+}
+
+
+.pawcare-password-toggle svg {
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   REMEMBER ME
+========================================================= */
+
+.remember-me {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  width: fit-content;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  user-select: none;
+}
+
+
+.remember-me input {
+  position: absolute;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+.custom-checkbox {
+  width: 17px;
+  height: 17px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.remember-me:hover .custom-checkbox {
+  border-color: #86efac;
+}
+
+
+.remember-me input:checked + .custom-checkbox {
+  border-color: #16a34a;
+
+  background: #16a34a;
+
+  transform: scale(1.05);
+}
+
+
+.remember-me input:checked + .custom-checkbox::after {
+  content: "✓";
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.pawcare-login-button {
+  width: 100%;
+
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 3px;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #15803d,
+      #16a34a 50%,
+      #0f766e
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(22, 163, 74, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.pawcare-login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 32px rgba(22, 163, 74, 0.30);
+}
+
+
+.pawcare-login-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+
+.pawcare-login-button:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+
+.pawcare-login-button svg {
+  font-size: 13px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.pawcare-login-button:hover:not(:disabled) svg {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   REGISTER
+========================================================= */
+
+.pawcare-register {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  margin-top: 27px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+
+.pawcare-register a {
+  color: #16a34a;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+
+.pawcare-register a:hover {
+  color: #15803d;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   SECURITY FOOTER
+========================================================= */
+
+.login-security {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 32px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #f1f5f9;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+}
+
+
+.login-security svg {
+  color: #22c55e;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes floatBlobOne {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-25px, 25px) scale(1.05);
+  }
+}
+
+
+@keyframes floatBlobTwo {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(25px, -20px) scale(1.06);
+  }
+}
+
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    opacity: 0.6;
+
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.15);
+  }
+}
+
+
+@keyframes pulseRing {
+
+  0%,
+  100% {
+    transform: scale(1);
+
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.08);
+
+    opacity: 1;
+  }
+}
+
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes rotateReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+
+@keyframes floatingPawOne {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(25deg);
+  }
+
+  50% {
+    transform:
+      translateY(-18px)
+      rotate(31deg);
+  }
+}
+
+
+@keyframes floatingPawTwo {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(-25deg);
+  }
+
+  50% {
+    transform:
+      translateY(15px)
+      rotate(-18deg);
+  }
+}
+
+
+@keyframes floatingPawThree {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(-18deg);
+  }
+
+  50% {
+    transform:
+      translateY(-12px)
+      rotate(-10deg);
+  }
+}
+
+
+@keyframes floatingPawFour {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(30deg);
+  }
+
+  50% {
+    transform:
+      translateY(15px)
+      rotate(38deg);
+  }
+}
+
+
+@keyframes dotFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(-12px);
+
+    opacity: 1;
+  }
+}
+
+
+@keyframes brandGlowOne {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-20px, 20px);
+  }
+}
+
+
+@keyframes brandGlowTwo {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(20px, -15px);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1000px
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .pawcare-login-container {
+    grid-template-columns: 44% 56%;
+  }
+
+  .pawcare-login-brand {
+    padding: 38px;
+  }
+
+  .pawcare-login-form-section {
+    padding: 40px;
+  }
+
+  .brand-content h1 {
+    font-size: 42px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 800px
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .pawcare-login-page {
+    padding: 20px;
+  }
+
+  .pawcare-login-container {
+    min-height: auto;
+
+    display: block;
+
+    max-width: 500px;
+
+    border-radius: 24px;
+  }
+
+  .pawcare-login-brand {
+    display: none;
+  }
+
+  .pawcare-login-form-section {
+    padding: 45px 40px;
+  }
+
+  .mobile-login-brand {
+    display: flex;
+  }
+
+  .login-decoration-one {
+    width: 400px;
+    height: 400px;
+  }
+
+  .login-decoration-two {
+    width: 320px;
+    height: 320px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 500px
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .pawcare-login-page {
+    min-height: 100vh;
+
+    padding: 12px;
+
+    align-items: center;
+  }
+
+  .pawcare-login-container {
+    width: 100%;
+
+    border-radius: 20px;
+
+    box-shadow:
+      0 15px 40px rgba(15, 23, 42, 0.10);
+  }
+
+  .pawcare-login-form-section {
+    padding: 35px 24px;
+  }
+
+  .mobile-login-brand {
+    margin-bottom: 28px;
+  }
+
+  .login-form-header {
+    margin-bottom: 25px;
+  }
+
+  .login-form-header h2 {
+    font-size: 29px;
+  }
+
+  .login-form-header p {
+    font-size: 13px;
+  }
+
+  .pawcare-input-wrapper {
+    height: 50px;
+  }
+
+  .pawcare-login-button {
+    height: 52px;
+  }
+
+  .pawcare-register {
+    flex-direction: column;
+
+    gap: 4px;
+
+    line-height: 1.5;
+  }
+
+  /* Keep some background decoration visible */
+
+  .login-paw-decoration {
+    display: flex;
+  }
+
+  .paw-one {
+    top: 3%;
+
+    right: -15px;
+
+    font-size: 55px;
+  }
+
+  .paw-two {
+    bottom: 3%;
+
+    left: -20px;
+
+    font-size: 65px;
+  }
+
+  .paw-three,
+  .paw-four {
+    display: none;
+  }
+
+  .login-ring-one {
+    width: 240px;
+    height: 240px;
+
+    left: -130px;
+  }
+
+  .login-ring-two {
+    width: 170px;
+    height: 170px;
+
+    right: -80px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .pawcare-login-form-section {
+    padding: 30px 18px;
+  }
+
+  .login-form-header h2 {
+    font-size: 26px;
+  }
+
+  .password-label-row {
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .forgot-password {
+    font-size: 11px;
+  }
+
+  .login-decoration-one {
+    width: 300px;
+    height: 300px;
+  }
+
+  .login-decoration-two {
+    width: 250px;
+    height: 250px;
+  }
+
+}
